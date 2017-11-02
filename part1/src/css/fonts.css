@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Header Font';
+  font-style: normal;
+  font-weight: normal;
+  src: url(../fonts/heading-font.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Body Font';
+  font-style: normal;
+  font-weight: normal;
+  src: url(../fonts/body-font.otf) format('opentype');
+}
