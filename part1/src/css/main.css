@@ -2,3 +2,10 @@
 @import url(layout.css);
 @import url(styles.css);
 @import url(responsive.css);
+
+:root {
+  --text--light: #ffffff;
+  --background--light: #FEFFFE;
+  --background--dark: #0a1e5b;
+  --background--medium: #D4DDEB;
+}

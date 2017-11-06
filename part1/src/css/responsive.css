@@ -1,6 +1,6 @@
 /* Responsive: */
 
-@media only screen and (min-width: 640px) {
+/* @media only screen and (min-width: 640px) {
   .layout {
     display: flex;
   }
@@ -10,4 +10,9 @@
   h1 {
     font-size: 3.5em;
   }
-}
+} */
+
+
+
+/* @custom-media --small (max-width: 640px); */
+/* check out media queries ranges for a better syntax !*/
