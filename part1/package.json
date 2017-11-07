@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack -p",
-    "start:dev": "webpack --watch"
+    "start:dev": "webpack --watch & browser-sync start --server"
   },
   "author": "Chris Dobler <chrisdobler@gmail.com> (http://chrisdobler.com)",
   "license": "ISC",
@@ -21,12 +21,12 @@
     "postcss-cssnext": "^3.0.2",
     "postcss-import": "^11.0.0",
     "postcss-loader": "^2.0.8",
+    "postcss-mixins": "^6.2.0",
     "rucksack": "^2.3.5",
     "rucksack-css": "^1.0.2",
     "style-loader": "^0.19.0",
     "url-loader": "^0.6.2",
     "webpack": "^3.8.1"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }

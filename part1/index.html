@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Static Web Page</title>
     <script src="./dist/bundle.min.js"></script>
   </head>
@@ -22,12 +23,12 @@
         </div>
         <div class="nav-bar">
           <div class="nav-bar__panel">
-            <li class="nav-bar__li--selected"><a href="#">Volume & Shape</a></li>
-            <li><a href="#">Smooth & Control</a></li>
-            <li><a href="#">Repair & Nourish</a></li>
-            <li><a href="#">Reviews</a></li>
-            <li><a href="#">How-to Videos</a></li>
-            <li><a href="#">Ingredients</a></li>
+            <li class="nav-bar__li--selected"><a class="nav-bar__link" href="#">Volume & Shape</a></li>
+            <li class="nav-bar__li"><a class="nav-bar__link" href="#">Smooth & Control</a></li>
+            <li class="nav-bar__li"><a class="nav-bar__link" href="#">Repair & Nourish</a></li>
+            <li class="nav-bar__li"><a class="nav-bar__link" href="#">Reviews</a></li>
+            <li class="nav-bar__li"><a class="nav-bar__link" href="#">How-to Videos</a></li>
+            <li class="nav-bar__li"><a class="nav-bar__link" href="#">Ingredients</a></li>
           </div>
         </div>
       </header>
@@ -38,17 +39,18 @@
           </div>
           <div class="content-panel__content">
             <div class="content-panel__image-box">
-              <img src="src/img/girl.jpg" />
+              <img class="content-panel__image" src="src/img/girl.jpg" />
             </div>
-            <h2 class="content-panel__header">Volume & Shape</h2>
-            <div class="content-panel__hr"><hr /></div>
-            
-            <p class="content-panel__text-area">Reveal beautiful body and envialbe oomph with this collection for fine, flat hair featuring volumizing hibiscus proteins. Safe for color treate hair.</p>
+            <div class="content-panel__description">
+              <h2 class="content-panel__header">Volume & Shape</h2>
+              <div class="content-panel__seperator"></div><div class="content-panel__hr"/></div>
+              
+              <p class="content-panel__text-area">Reveal beautiful body and envialbe oomph with this collection for fine, flat hair featuring volumizing hibiscus proteins. Safe for color treated hair.</p>
+            </div>
           </div>
         </div>
       </main>
       <footer>
-        &copy; 2017 Company
       </footer>
     </div>
 

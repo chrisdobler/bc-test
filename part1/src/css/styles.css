@@ -4,6 +4,10 @@ body {
   background-color: var(--background--light);
 }
 
+footer {
+  margin-top: 40px;
+}
+
 img {
   max-width: 100%;
 }

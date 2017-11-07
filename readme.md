@@ -4,10 +4,11 @@ Hey Guys, thanks for taking a look.
 
 ### part 1
 
+* Tested on Edge, Chrome, Firefox and Mobile Safari.
+
 ```
 npm install
-npm run build
+npm run start:dev
 ```
-Then open index.html
 
 ### part 2

@@ -3,9 +3,14 @@
 @import url(styles.css);
 @import url(responsive.css);
 
+
+@lost flexbox flex;
+
 :root {
   --text--light: #ffffff;
+  --text--dark: #111111;
   --background--light: #FEFFFE;
   --background--dark: #0a1e5b;
   --background--medium: #D4DDEB;
+  --black: #000;
 }
