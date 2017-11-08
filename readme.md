@@ -41,3 +41,7 @@ Ideal:
 
 ### Instructions
 
+```
+npm install
+npm start
+```
