@@ -1,7 +1,10 @@
 import { combineReducers } from 'redux';
+import queryReducer from './query';
+import selectionReducer from './selection';
 
 const rootReducer = combineReducers({
-  state: (state = {}) => state
+  query: queryReducer,
+  selection: selectionReducer
 });
 
 export default rootReducer;
