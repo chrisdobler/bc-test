@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { updateQuery, trimQuery } from '../actions/index';
 import { Link } from 'react-router-dom';
-import store from '../index.js';
 import { withRouter } from 'react-router-dom'
 
 class SearchBar extends Component {
@@ -36,8 +35,9 @@ class SearchBar extends Component {
   }
   
   onFormSubmit(e) {
+    const id = this.props.selection.url.replace(/[^0-9\\]+/g, '');
     e.preventDefault();
-    this.props.history.push('/person/1');
+    this.props.history.push(`/person/${id}`);
   }
 
   render() {
@@ -58,7 +58,10 @@ class SearchBar extends Component {
 }
 
 function mapStateToProps(state) {
-  return { term: state.query };
+  return { 
+    term: state.query,
+    selection: state.selection
+  };
 }
 
 function mapDispatchToProps(dispatch) {

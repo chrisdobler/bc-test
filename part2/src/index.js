@@ -11,8 +11,8 @@ import reducers from './reducers';
 import rootSaga from './sagas'
 
 import SearchPage from './components/search_page';
-import PeopleShow from './components/people_show';
-import PlanetsShow from './components/planets_show';
+import PeopleShow from './containers/people_show';
+import PlanetsShow from './containers/planets_show';
 
 const sagaMiddleware = createSagaMiddleware()
 const RouterMiddleware = routerMiddleware(browserHistory)
@@ -29,8 +29,8 @@ ReactDOM.render(
     <BrowserRouter>
       <div>
         <Switch>
-          <Route path="/people/:id" component={PeopleShow} />
-          <Route path="/planet/:id" component={PlanetsShow} />
+          <Route path="/person/:id" component={PeopleShow} />
+          <Route path="/planets/:id" component={PlanetsShow} />
           <Route path="/" component={SearchPage} />
         </Switch>
       </div>
