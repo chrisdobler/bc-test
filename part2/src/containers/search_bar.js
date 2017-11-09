@@ -40,19 +40,32 @@ class SearchBar extends Component {
     this.props.history.push(`/person/${id}`);
   }
 
+  // This area needs more work, but would eliminate the need for a submit button.
+
+  // componentDidUpdate(prevProps, prevState) {
+  //   if(prevProps.selection.name !== this.props.selection.name)
+  //   {
+  //     const id = this.props.selection.url.replace(/[^0-9\\]+/g, '');
+  //     this.props.history.push(`/person/${id}`);
+  //   }
+  // }
+
   render() {
     return (
-      <form onSubmit={this.onFormSubmit} className="input-group">
-        <input 
-          placeholder="Get instant information about Star Wars characters"
-          className="form-control"
-          value={this.props.term}
-          onChange={this.onInputChange}
-        />
-        <span className="input-group-btn">
-          <button type="submit" className="btn btn-secondary">Investigate</button>
-        </span>
-      </form>
+      <div>
+        <h1>SWAPI Search</h1>
+        <form onSubmit={this.onFormSubmit} className="input-group">
+          <input 
+            placeholder="Get instant information about Star Wars characters"
+            className="form-control"
+            value={this.props.term}
+            onChange={this.onInputChange}
+          />
+          <span className="input-group-btn">
+            <button type="submit" className="btn btn-secondary">Investigate</button>
+          </span>
+        </form>
+      </div>
     );
   }
 }

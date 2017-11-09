@@ -12,7 +12,6 @@ export default class App extends Component {
     };
     return (
       <div style={style.container}>
-        <h1>SWAPI Search</h1>
         <SearchBar />
       </div>
     );

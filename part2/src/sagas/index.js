@@ -9,7 +9,9 @@ import {
   FETCH_PERSON,
   FETCH_PERSON_SUCCESS,
   FETCH_PLANET,
-  FETCH_PLANET_SUCCESS
+  FETCH_PLANET_SUCCESS,
+  FETCH_IMAGE,
+  FETCH_IMAGE_SUCCESS
 } from '../actions/types';
 
 const API_URL = 'https://swapi.co/api';
@@ -39,6 +41,28 @@ function* fetchPerson(query) {
   yield put({ type: FETCH_PERSON_SUCCESS, payload })
 }
 
+export function fetchPlanetApi(query) {
+  return fetch(`${API_URL}/planets/${query.payload}/` )
+    .then(response => response.json() )
+    .then(json => json);
+}
+function* fetchPlanet(query) {
+  const payload = yield call(fetchPlanetApi, query)
+  // create and yield a dispatch Effect
+  yield put({ type: FETCH_PLANET_SUCCESS, payload })
+}
+
+export function fetchImageApi(query) {
+  return fetch(`http://localhost:8081/https://api.qwant.com/api/search/images?count=10&offset=1&q=${query.payload}/` )
+    .then(response => response.json() )
+    .then(json => json.data.result.items[0].media);
+}
+function* fetchImage(query) {
+  const payload = yield call(fetchImageApi, query)
+  // create and yield a dispatch Effect
+  yield put({ type: FETCH_IMAGE_SUCCESS, payload })
+}
+
 
 //-----------   Watchers    -----------------------------------//
 
@@ -50,6 +74,14 @@ export function* watchFetchPerson() {
   yield takeEvery(FETCH_PERSON, fetchPerson)
 }
 
+export function* watchFetchPlanet() {
+  yield takeEvery(FETCH_PLANET, fetchPlanet)
+}
+
+export function* watchFetchImage() {
+  yield takeEvery(FETCH_IMAGE, fetchImage)
+}
+
 export function* startup() {
 }
 
@@ -57,4 +89,6 @@ export default function* root() {
   yield fork(startup)
   yield fork(watchFetchCharacters)
   yield fork(watchFetchPerson)
+  yield fork(watchFetchPlanet)
+  yield fork(watchFetchImage)
 }

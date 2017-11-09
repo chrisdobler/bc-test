@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchPerson } from '../../actions';
+import { fetchPerson, fetchImage } from '../../actions';
 import { Link } from 'react-router-dom';
 import './styles.css';
 import Panel from '../../components/panel';
+import SearchBar from '../search_bar';
 
 class PeopleShow extends Component {
 
@@ -12,6 +13,12 @@ class PeopleShow extends Component {
       const { id } = this.props.match.params;
       this.props.fetchPerson(id);
     }
+  }
+  
+  componentDidUpdate(prevProps, prevState) {
+    const name = this.props.selection.name
+    if (prevProps.selection.name !== name)
+      this.props.fetchImage(name);
   }
 
   render() {
@@ -23,14 +30,15 @@ class PeopleShow extends Component {
     }
 
     return (
-      <Panel>
-        <div className="panel panel-info">
+      <div>
+        <SearchBar />
+        <Panel>
           <div className="panel-heading">
             <h3 className="panel-title">{p.name}</h3>
           </div>
           <div className="panel-body">
             <div className="row">
-              <div className="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png" className="img-circle img-responsive" /> </div>
+              <div className="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src={this.props.image} className="profile-img img-responsive" /> </div>
               
               <div className=" col-md-9 col-lg-9 "> 
                 <table className="table table-user-information">
@@ -77,16 +85,17 @@ class PeopleShow extends Component {
               <a data-original-title="Remove this user" data-toggle="tooltip" type="button" className="btn btn-sm btn-danger"><i className="glyphicon glyphicon-remove"></i></a>
             </span>
           </div>
-        </div>
-      </Panel>
+        </Panel>
+      </div>
     );
   }
 }
 
 function mapStateToProps(state) {
   return {
-    selection: state.selection
+    selection: state.selection,
+    image: state.image
   };
 }
 
-export default connect(mapStateToProps, { fetchPerson })(PeopleShow);
+export default connect(mapStateToProps, { fetchPerson, fetchImage })(PeopleShow);

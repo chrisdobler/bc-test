@@ -5,3 +5,5 @@ export const FETCH_PERSON = 'fetch_person';
 export const FETCH_PERSON_SUCCESS = 'fetch_person_success';
 export const FETCH_PLANET = 'fetch_planet';
 export const FETCH_PLANET_SUCCESS = 'fetch_planet_success';
+export const FETCH_IMAGE = 'fetch_image';
+export const FETCH_IMAGE_SUCCESS = 'fetch_image_success';

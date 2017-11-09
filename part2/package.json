@@ -5,7 +5,9 @@
   "main": "index.js",
   "repository": "git@github.com:StephenGrider/ReduxSimpleStarter.git",
   "scripts": {
-    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "start": "npm run start:client & npm run start:server",
+    "start:client": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "start:server": "node server",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test -- --watch"
   },
@@ -29,6 +31,7 @@
   "dependencies": {
     "babel-preset-stage-1": "^6.1.18",
     "babel-runtime": "^6.26.0",
+    "cors-anywhere": "^0.4.0",
     "css-loader": "^0.28.7",
     "isomorphic-fetch": "^2.2.1",
     "lodash": "^3.10.1",
