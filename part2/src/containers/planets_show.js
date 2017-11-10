@@ -14,7 +14,7 @@ class PlanetsShow extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const name = this.props.planet.name
+    const name = this.props.planet.name;
     if (prevProps.planet.name !== name)
       this.props.fetchImage(name);
   }
@@ -34,8 +34,8 @@ class PlanetsShow extends Component {
               <div className="col-md-3 col-lg-3 " align="center">
                 <img alt="User Pic" src={this.props.image} className="profile-img img-responsive" />
               </div>
-              
-              <div className=" col-md-9 col-lg-9 "> 
+
+              <div className=" col-md-9 col-lg-9 ">
                 <table className="table table-user-information">
                   <tbody>
                     <tr>
@@ -67,7 +67,7 @@ class PlanetsShow extends Component {
                       <td>{p.surface_water}</td>
                     </tr>
                   </tbody>
-                </table>                     
+                </table>
               </div>
             </div>
           </div>
@@ -80,7 +80,7 @@ class PlanetsShow extends Component {
 function mapStateToProps(state) {
   return {
     planet: state.planet,
-    image: state.image
+    image: state.image,
   };
 }
 

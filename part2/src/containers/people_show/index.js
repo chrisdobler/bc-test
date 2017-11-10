@@ -7,16 +7,15 @@ import Panel from '../../components/panel';
 import SearchBar from '../search_bar';
 
 class PeopleShow extends Component {
-
   componentDidMount() {
     if (!this.props.selection) {
       const { id } = this.props.match.params;
       this.props.fetchPerson(id);
     }
   }
-  
+
   componentDidUpdate(prevProps, prevState) {
-    const name = this.props.selection.name
+    const name = this.props.selection.name;
     if (prevProps.selection.name !== name)
       this.props.fetchImage(name);
   }
@@ -39,8 +38,8 @@ class PeopleShow extends Component {
           <div className="panel-body">
             <div className="row">
               <div className="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src={this.props.image} className="profile-img img-responsive" /> </div>
-              
-              <div className=" col-md-9 col-lg-9 "> 
+
+              <div className=" col-md-9 col-lg-9 ">
                 <table className="table table-user-information">
                   <tbody>
                     <tr>
@@ -72,17 +71,17 @@ class PeopleShow extends Component {
                       <td>{p.skin_color}</td>
                     </tr>
                   </tbody>
-                </table>                     
+                </table>
                 <Link to={homeworld_url} className="btn btn-primary">Home Planet Information</Link>
               </div>
             </div>
           </div>
           <div className="panel-footer">
-            <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" className="btn btn-sm btn-primary"><i className="glyphicon glyphicon-envelope"></i></a>
+            <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" className="btn btn-sm btn-primary"><i className="glyphicon glyphicon-envelope" /></a>
             <span className="pull-right">
-              <a href="#" data-original-title="Edit this user" data-toggle="tooltip" type="button" className="btn btn-sm btn-warning"><i className="glyphicon glyphicon-edit"></i></a>
+              <a href="#" data-original-title="Edit this user" data-toggle="tooltip" type="button" className="btn btn-sm btn-warning"><i className="glyphicon glyphicon-edit" /></a>
               &nbsp;
-              <a data-original-title="Remove this user" data-toggle="tooltip" type="button" className="btn btn-sm btn-danger"><i className="glyphicon glyphicon-remove"></i></a>
+              <a data-original-title="Remove this user" data-toggle="tooltip" type="button" className="btn btn-sm btn-danger"><i className="glyphicon glyphicon-remove" /></a>
             </span>
           </div>
         </Panel>
@@ -94,7 +93,7 @@ class PeopleShow extends Component {
 function mapStateToProps(state) {
   return {
     selection: state.selection,
-    image: state.image
+    image: state.image,
   };
 }
 

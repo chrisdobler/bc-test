@@ -8,7 +8,7 @@ const rootReducer = combineReducers({
   query: queryReducer,
   selection: selectionReducer,
   planet: planetReducer,
-  image: imageReducer
+  image: imageReducer,
 });
 
 export default rootReducer;
